@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="style.css">
+        <title>hello-redux html</title>
+    </head>
+    <body>
+        <div id="root">
+            <div class="hello-world">
+                Hello world
+                <span id="hello-world__tech">React</span>
+            </div>
+            <div class="hello-btns">
+                <button id="react" class="hello-btn react">React</button>
+                <button id="angular" class="hello-btn angular">Angular</button>
+                <button id="nodes" class="hello-btn nodes">Nodes</button>
+            </div>
+        </div>
+        <script>
+            var reactBtn = document.getElementById('react');
+            var angularBtn = document.getElementById('angular');
+            var nodesBtn = document.getElementById('nodes');
+
+            var helloWorldTech = document.getElementById("hello-world__tech");
+
+            function displayTech(button, text) {
+                button
+                    .addEventListener("click", function () {
+                        helloWorldTech.textContent = text;
+                    })
+            }
+
+            displayTech(reactBtn, "react");
+            displayTech(angularBtn, "angular")
+            displayTech(nodesBtn, "nodes")
+        </script>
+    </body>
+</html>
