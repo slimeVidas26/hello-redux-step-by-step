@@ -21,16 +21,18 @@
             var helloWorldTech = document.getElementById('hello-world__tech')
             var helloBtns = document.getElementById('hello-btns');
 
-            technologies.forEach(function (item) {
-                helloBtns.innerHTML += `<button id = "${item}" class = "hello-btn">${item}</button>`;
-            });
-
-            var helloBtn = document.getElementsByClassName('hello-btn');
+          
+             const  techs = technologies.map((item)=>{
+             return `<button id = "${item}" class = "hello-btn">${item}</button>`;
+            })
+            helloBtns.innerHTML = techs;
+             var helloBtn = document.getElementsByClassName('hello-btn');
             for (let i = 0; i < helloBtn.length; i++) {
-                helloBtn[i].addEventListener('click', function (e) {
-                helloWorldTech.textContent = e.target.id;
-                    });
-            }
+                    helloBtn[i].addEventListener('click', function (e) {
+                             helloWorldTech.textContent = e.target.id;
+                         });
+                }
+
         </script>
     </body>
 </html>
