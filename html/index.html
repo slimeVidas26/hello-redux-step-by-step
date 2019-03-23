@@ -13,29 +13,24 @@
                 Hello world
                 <span id="hello-world__tech">React</span>
             </div>
-            <div class="hello-btns">
-                <button id="react" class="hello-btn react">React</button>
-                <button id="angular" class="hello-btn angular">Angular</button>
-                <button id="nodes" class="hello-btn nodes">Nodes</button>
-            </div>
+            <div id="hello-btns"></div>
         </div>
         <script>
-            var reactBtn = document.getElementById('react');
-            var angularBtn = document.getElementById('angular');
-            var nodesBtn = document.getElementById('nodes');
 
-            var helloWorldTech = document.getElementById("hello-world__tech");
+            var technologies = ["React", "Angular", "Nodes"];
+            var helloWorldTech = document.getElementById('hello-world__tech')
+            var helloBtns = document.getElementById('hello-btns');
 
-            function displayTech(button, text) {
-                button
-                    .addEventListener("click", function () {
-                        helloWorldTech.textContent = text;
-                    })
+            technologies.forEach(function (item) {
+                helloBtns.innerHTML += `<button id = "${item}" class = "hello-btn">${item}</button>`;
+            });
+
+            var helloBtn = document.getElementsByClassName('hello-btn');
+            for (let i = 0; i < helloBtn.length; i++) {
+                helloBtn[i].addEventListener('click', function (e) {
+                helloWorldTech.textContent = e.target.id;
+                    });
             }
-
-            displayTech(reactBtn, "react");
-            displayTech(angularBtn, "angular")
-            displayTech(nodesBtn, "nodes")
         </script>
     </body>
 </html>
