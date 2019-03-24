@@ -11,25 +11,27 @@
         <div id="root">
             <div class="hello-world">
                 Hello world
-                <span id="hello-world__tech">React</span>
+                <span class="hello-world__tech">React</span>
             </div>
-            <div id="hello-btns"></div>
+            <div class="hello-btns"></div>
         </div>
         <script>
 
             var technologies = ["React", "Angular", "Nodes"];
-            var helloWorldTech = document.getElementById('hello-world__tech')
-            var helloBtns = document.getElementById('hello-btns');
+            var helloWorldTech = document.getElementsByClassName('hello-world__tech')
+            var helloBtns = document.getElementsByClassName('hello-btns');
 
-          
+             
              const  techs = technologies.map((item)=>{
              return `<button id = "${item}" class = "hello-btn">${item}</button>`;
             })
-            helloBtns.innerHTML = techs;
+            helloBtns[0].innerHTML = techs;
              var helloBtn = document.getElementsByClassName('hello-btn');
-            for (let i = 0; i < helloBtn.length; i++) {
-                    helloBtn[i].addEventListener('click', function (e) {
-                             helloWorldTech.textContent = e.target.id;
+             const helloBtnArray = Array.from(helloBtn);
+            for (let i = 0; i < helloBtnArray.length; i++) {
+                helloBtnArray[i].addEventListener('click', function (e) {
+                             helloWorldTech[0].textContent = e.target.id;
+                             
                          });
                 }
 
