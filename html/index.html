@@ -13,6 +13,7 @@
                 Hello world
                 <span class="hello-world__tech">React</span>
             </div>
+            
             <div class="hello-btns"></div>
         </div>
         <script>
@@ -21,20 +22,19 @@
             var helloWorldTech = document.getElementsByClassName('hello-world__tech')
             var helloBtns = document.getElementsByClassName('hello-btns');
 
-             
-             const  techs = technologies.map((item)=>{
-             return `<button id = "${item}" class = "hello-btn">${item}</button>`;
+            const techs = technologies.map((item) => {
+                return `<button id = "${item}" class = "hello-btn">${item}</button>`;
             })
             helloBtns[0].innerHTML = techs;
-             var helloBtn = document.getElementsByClassName('hello-btn');
-             const helloBtnArray = Array.from(helloBtn);
+            var helloBtn = document.getElementsByClassName('hello-btn');
+            const helloBtnArray = Array.from(helloBtn);
             for (let i = 0; i < helloBtnArray.length; i++) {
-                helloBtnArray[i].addEventListener('click', function (e) {
-                             helloWorldTech[0].textContent = e.target.id;
-                             
-                         });
-                }
+                helloBtnArray[i]
+                    .addEventListener('click', function (e) {
+                        helloWorldTech[0].textContent = e.target.id;
 
+                    });
+            }
         </script>
     </body>
 </html>
